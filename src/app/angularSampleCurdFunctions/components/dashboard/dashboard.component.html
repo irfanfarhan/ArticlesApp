@@ -1,4 +1,8 @@
 <div class="container">
+    <h2>Phone Validation</h2>
+    <input type="text" (keypress)="keyPress($event)" [(ngModel)]="phone" minlength=10 maxlength=10> {{phone}}
+</div>
+<div class="container">
     <h2>Articles</h2>
     <table class="table table-hover">
         <thead>

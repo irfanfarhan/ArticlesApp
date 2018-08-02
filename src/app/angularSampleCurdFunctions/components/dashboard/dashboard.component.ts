@@ -15,6 +15,7 @@ import {
 })
 export class DashboardComponent implements OnInit {
  articles: any[];
+ phone: number;
   constructor(private userService: UserService,
     private loadingService: LoadingService,
     private route: ActivatedRoute,
@@ -40,5 +41,13 @@ export class DashboardComponent implements OnInit {
   }
   trackByFn(index, item) {
     return index;
+  }
+  keyPress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
+
+    let inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode != 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }
   }
 }
